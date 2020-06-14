@@ -52,7 +52,7 @@ namespace CS321_W2D1_BlogAPI.Controllers
         {
             // add the new post
             // use _postService to add newPost
-            var post = _postService.Add(newPost);
+            _postService.Add(newPost);
 
             // return a 201 Created status. This will also add a "location" header
             // with the URI of the new post. E.g., /api/posts/99, if the new is 99
