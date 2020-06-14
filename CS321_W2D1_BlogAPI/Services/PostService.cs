@@ -53,14 +53,16 @@ namespace CS321_W2D1_BlogAPI.Services
         public Post Update(Post updatedPost)
         {
             // get the Post object in the current list with this id 
-            // TODO: find the post to update in the list, using updatedPost.Id, and assign to currentPost
-            _posts.Get(updatedPost.Id);
-            updatedPost.Id = var currentPost;
+            // find the post to update in the list, using updatedPost.Id, and assign to currentPost
+            var currentPost = Get(updatedPost.Id);
+
             // return null if the Post to update isn't found
             if (currentPost == null) return null;
 
             // copy the property values from the updated post into the current post object
-            // TODO: copy the values in updatedPost to the post you found in the list
+            // copy the values in updatedPost to the post you found in the list
+            currentPost.Title = updatedPost.Title;
+            currentPost.Body = updatedPost.Body;
 
             return currentPost;
         }
